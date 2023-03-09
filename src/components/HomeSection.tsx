@@ -38,7 +38,7 @@ function HomeSection() {
                 fill
                 src={seasonImage}
                 alt="Season Image"
-              ></Image>
+              />
             </div>
             <div
               className={`${
@@ -50,7 +50,7 @@ function HomeSection() {
                 fill
                 src={seasonImage}
                 alt="Season Image"
-              ></Image>
+              />
             </div>
             <div
               className={`${
@@ -62,7 +62,7 @@ function HomeSection() {
                 fill
                 src={seasonImage}
                 alt="Season Image"
-              ></Image>
+              />
             </div>
             <div
               className={`${
@@ -74,7 +74,7 @@ function HomeSection() {
                 fill
                 src={seasonImage}
                 alt="Season Image"
-              ></Image>
+              />
             </div>
             <div
               className={`${
@@ -86,7 +86,7 @@ function HomeSection() {
                 fill
                 src={seasonImage}
                 alt="Season Image"
-              ></Image>
+              />
             </div>
           </div>
         </div>
