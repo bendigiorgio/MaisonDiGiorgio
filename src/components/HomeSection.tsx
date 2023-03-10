@@ -28,7 +28,7 @@ function HomeSection() {
         </div>
 
         {/* Season Image */}
-        <div className="h-[80vh] w-screen px-6 md:px-48">
+        <div className="h-[80vh] w-screen px-8 md:px-12 lg:px-32 xl:px-48">
           <AnimatePresence>
             <div
               className="flex h-[82.5%] w-full"
@@ -58,7 +58,7 @@ function HomeSection() {
                 className={`${
                   // eslint-disable-next-line
                   hovering && "opacity-40"
-                } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 md:flex`}
+                } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 xl:flex`}
               >
                 <Image
                   className="scale-[2.8] object-cover object-[0%_-11vw]"
@@ -84,7 +84,7 @@ function HomeSection() {
                 className={`${
                   // eslint-disable-next-line
                   hovering && "opacity-40"
-                } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 md:flex`}
+                } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 lg:flex`}
               >
                 <Image
                   className="scale-[2] object-cover object-[45%_8vw]"
