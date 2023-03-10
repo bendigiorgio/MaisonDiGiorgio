@@ -2,11 +2,11 @@ import { useMemo, useRef } from "react";
 import vertexShader from "./vertex.glsl";
 import fragmentShader from "./fragment.glsl";
 import { useFrame } from "@react-three/fiber";
-import { MathUtils, Mesh, ShaderMaterial } from "three";
+import { MathUtils } from "three";
 import { useScroll } from "@react-three/drei";
 function Blob() {
-  const mesh = useRef<Mesh>(null!);
-  const shaderRef = useRef<ShaderMaterial>(null!);
+  const mesh = useRef<THREE.Mesh>(null!);
+  const shaderRef = useRef<THREE.ShaderMaterial>(null!);
   const vShader = vertexShader;
   const fShader = fragmentShader;
   const scroll = useScroll();
@@ -23,6 +23,7 @@ function Blob() {
   }, []);
 
   useFrame((state) => {
+    /* eslint-disable */
     const { clock } = state;
     if (shaderRef.current) {
       shaderRef.current.uniforms.u_time!.value = 0.4 * clock.getElapsedTime();
@@ -66,7 +67,7 @@ function Blob() {
         ));
 
       shaderRef.current.uniforms.u_scroll_pos!.value = scroll.offset;
-      console.log(scroll.offset);
+      /* eslint-enable */
     }
   });
 
