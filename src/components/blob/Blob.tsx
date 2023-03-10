@@ -5,8 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import { MathUtils } from "three";
 import { useScroll } from "@react-three/drei";
 function Blob() {
-  const mesh = useRef<THREE.Mesh>(null!);
-  const shaderRef = useRef<THREE.ShaderMaterial>(null!);
+  const mesh = useRef<any>(null!);
   const vShader = vertexShader;
   const fShader = fragmentShader;
   const scroll = useScroll();
@@ -25,48 +24,49 @@ function Blob() {
   useFrame((state) => {
     /* eslint-disable */
     const { clock } = state;
-    if (shaderRef.current) {
-      shaderRef.current.uniforms.u_time!.value = 0.4 * clock.getElapsedTime();
+    if (mesh.current) {
+      mesh.current.material.uniforms.u_time.value =
+        0.4 * clock.getElapsedTime();
 
-      shaderRef.current.uniforms.u_intensity!.value = MathUtils.lerp(
-        shaderRef.current.uniforms.u_intensity!.value,
+      mesh.current.material.uniforms.u_intensity.value = MathUtils.lerp(
+        mesh.current.material.uniforms.u_intensity.value,
         0.15 + scroll.delta * 100,
         0.02
       );
 
       scroll.offset > 0.33
-        ? ((shaderRef.current.uniforms.u_boost_red!.value = MathUtils.lerp(
-            shaderRef.current.uniforms.u_boost_red!.value,
+        ? ((mesh.current.material.uniforms.u_boost_red.value = MathUtils.lerp(
+            mesh.current.material.uniforms.u_boost_red.value,
             1.0,
             0.002
           )),
-          (shaderRef.current.uniforms.u_boost_green!.value = MathUtils.lerp(
-            shaderRef.current.uniforms.u_boost_green!.value,
+          (mesh.current.material.uniforms.u_boost_green.value = MathUtils.lerp(
+            mesh.current.material.uniforms.u_boost_green.value,
             0.5,
             0.002
           )),
-          (shaderRef.current.uniforms.u_boost_blue!.value = MathUtils.lerp(
-            shaderRef.current.uniforms.u_boost_blue!.value,
+          (mesh.current.material.uniforms.u_boost_blue.value = MathUtils.lerp(
+            mesh.current.material.uniforms.u_boost_blue.value,
             -1.0,
             0.002
           )))
-        : (shaderRef.current.uniforms.u_boost_red!.value = MathUtils.lerp(
-            shaderRef.current.uniforms.u_boost_red!.value,
+        : (mesh.current.material.uniforms.u_boost_red.value = MathUtils.lerp(
+            mesh.current.material.uniforms.u_boost_red.value,
             0.0,
             0.002
           )),
-        (shaderRef.current.uniforms.u_boost_green!.value = MathUtils.lerp(
-          shaderRef.current.uniforms.u_boost_green!.value,
+        (mesh.current.material.uniforms.u_boost_green.value = MathUtils.lerp(
+          mesh.current.material.uniforms.u_boost_green.value,
           0.0,
           0.002
         )),
-        (shaderRef.current.uniforms.u_boost_blue!.value = MathUtils.lerp(
-          shaderRef.current.uniforms.u_boost_blue!.value,
+        (mesh.current.material.uniforms.u_boost_blue.value = MathUtils.lerp(
+          mesh.current.material.uniforms.u_boost_blue.value,
           0.0,
           0.002
         ));
 
-      shaderRef.current.uniforms.u_scroll_pos!.value = scroll.offset;
+      mesh.current.material.uniforms.u_scroll_pos.value = scroll.offset;
       /* eslint-enable */
     }
   });
