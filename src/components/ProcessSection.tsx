@@ -81,19 +81,19 @@ const ScrollSection = () => {
         <div className="flex flex-row gap-x-9">
           <div>
             <h3 className="font-josefin">Discovery</h3>
-            <div className="h-48 w-48 rounded-md border-[1.2px] border-s-purple border-opacity-10 bg-neutral-100 bg-opacity-70 bg-clip-padding backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
           <div>
             <h3 className="font-josefin">Design</h3>
-            <div className="h-48 w-48 rounded-md border-[1.2px] border-s-purple border-opacity-10 bg-neutral-100 bg-opacity-70 bg-clip-padding backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
           <div>
             <h3 className="font-josefin">Development</h3>
-            <div className="h-48 w-48 rounded-md border-[1.2px] border-s-purple border-opacity-10 bg-neutral-100 bg-opacity-70 bg-clip-padding backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
           <div>
             <h3 className="font-josefin">Maintenance</h3>
-            <div className="h-48 w-48 rounded-md border-[1.2px] border-s-purple border-opacity-10 bg-neutral-100 bg-opacity-70 bg-clip-padding backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
         </div>
       </Html>

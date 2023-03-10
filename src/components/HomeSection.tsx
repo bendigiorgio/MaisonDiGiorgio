@@ -43,11 +43,19 @@ function HomeSection() {
                 } relative flex grow cursor-pointer overflow-hidden rounded-l-3xl transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
               >
                 {hovering && hoverNumber === 0 && (
-                  <motion.h3 className="absolute top-1/2 left-1/2 z-30 text-white">
+                  <motion.h3
+                    key={"first_image"}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute top-1/2 left-1/2 z-30 text-white"
+                  >
                     Test
                   </motion.h3>
                 )}
                 <Image
+                  priority
                   className="scale-[1.5] object-cover object-left-bottom"
                   fill
                   src={seasonImage}
@@ -59,8 +67,10 @@ function HomeSection() {
                   // eslint-disable-next-line
                   hovering && "opacity-40"
                 } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 xl:flex`}
+                onMouseEnter={() => setHoverNumber(1)}
               >
                 <Image
+                  priority
                   className="scale-[2.8] object-cover object-[0%_-11vw]"
                   fill
                   src={seasonImage}
@@ -72,8 +82,10 @@ function HomeSection() {
                   // eslint-disable-next-line
                   hovering && "opacity-40"
                 } relative flex grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
+                onMouseEnter={() => setHoverNumber(2)}
               >
                 <Image
+                  priority
                   className="scale-[1.6] object-cover object-[60%,-5vw]"
                   fill
                   src={seasonImage}
@@ -85,8 +97,10 @@ function HomeSection() {
                   // eslint-disable-next-line
                   hovering && "opacity-40"
                 } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 lg:flex`}
+                onMouseEnter={() => setHoverNumber(3)}
               >
                 <Image
+                  priority
                   className="scale-[2] object-cover object-[45%_8vw]"
                   fill
                   src={seasonImage}
@@ -98,8 +112,10 @@ function HomeSection() {
                   // eslint-disable-next-line
                   hovering && "opacity-40"
                 } relative flex grow cursor-pointer overflow-hidden rounded-r-3xl transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
+                onMouseEnter={() => setHoverNumber(4)}
               >
                 <Image
+                  priority
                   className="scale-[2.5] object-cover object-[25%,-7vw]"
                   fill
                   src={seasonImage}
