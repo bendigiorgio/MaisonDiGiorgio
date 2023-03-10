@@ -30,7 +30,7 @@ function HomeSection() {
           >
             <div
               className={`${
-                hovering && " opacity-40"
+                hovering && "opacity-40"
               } relative flex grow cursor-pointer overflow-hidden rounded-l-3xl transition-all delay-75 ease-in-out hover:z-50 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
             >
               <Image
@@ -42,7 +42,7 @@ function HomeSection() {
             </div>
             <div
               className={`${
-                hovering && "opacity-40 "
+                hovering && "opacity-40"
               } relative flex grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-50 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
             >
               <Image
@@ -54,7 +54,7 @@ function HomeSection() {
             </div>
             <div
               className={`${
-                hovering && "opacity-40 "
+                hovering && "opacity-40"
               } relative flex grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-50 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
             >
               <Image
@@ -66,7 +66,7 @@ function HomeSection() {
             </div>
             <div
               className={`${
-                hovering && "opacity-40 "
+                hovering && "opacity-40"
               } relative flex grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-50 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
             >
               <Image
@@ -78,7 +78,7 @@ function HomeSection() {
             </div>
             <div
               className={`${
-                hovering && "opacity-40 "
+                hovering && "opacity-40"
               } relative flex grow cursor-pointer overflow-hidden rounded-r-3xl transition-all delay-75 ease-in-out hover:z-50 hover:scale-125 hover:rounded-3xl hover:opacity-100`}
             >
               <Image
