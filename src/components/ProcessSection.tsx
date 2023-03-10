@@ -1,5 +1,4 @@
-import React from "react";
-import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 import Blob from "./blob/Blob";
 import { ScrollControls } from "@react-three/drei";
 
