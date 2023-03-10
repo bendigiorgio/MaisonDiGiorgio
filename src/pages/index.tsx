@@ -13,6 +13,7 @@ const Home: NextPage = () => {
       <main className="w-screen max-w-full overflow-hidden bg-primary">
         <HomeSection />
         <ProcessSection />
+        <div className="h-screen w-screen"></div>
       </main>
     </>
   );
