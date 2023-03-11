@@ -72,13 +72,23 @@ const CardSection = () => {
     );
   };
 
+  const startLocEquation = (x: number) => {
+    return (
+      0.0000000048 * Math.pow(x, 3) -
+      0.000013448 * Math.pow(x, 2) +
+      0.003309577 * x +
+      20.8838087174
+    );
+  };
+
   const cardContainer = useRef<HTMLDivElement>(null!);
 
   /* eslint-enable */
   useFrame(() => {
     if (cardsRef.current) {
       cardsRef.current.position.x =
-        cardEquation(canvasSize.width) + 11 * (1 - scrollData.offset);
+        cardEquation(canvasSize.width) +
+        startLocEquation(canvasSize.width) * (1 - scrollData.offset);
     }
   });
 
