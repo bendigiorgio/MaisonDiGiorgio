@@ -73,15 +73,7 @@ const CardSection = () => {
   };
 
   const cardContainer = useRef<HTMLDivElement>(null!);
-  const imageElement = useRef<HTMLImageElement>(null!);
 
-  useEffect(() => {
-    if (imageElement.current) {
-      // @ts-ignore
-      imageElement.current.firstChild!.style.userSelect = "none";
-      console.log(imageElement.current.firstChild);
-    }
-  }, [imageElement.current]);
   /* eslint-enable */
   useFrame(() => {
     if (cardsRef.current) {
@@ -114,11 +106,9 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Design</h3>
-            <div
-              ref={imageElement}
-              className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"
-            >
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
               <Image
+                draggable={false}
                 className="object-cover object-center opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
                 src={designCard}
