@@ -11,7 +11,7 @@ const CardSection = () => {
     top: number;
   };
 
-  var pos = {
+  let pos = {
     x: 0,
     top: 0,
   };
