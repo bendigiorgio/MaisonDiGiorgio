@@ -1,7 +1,8 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import AboutSection from "~/components/AboutSection";
 import HomeSection from "~/components/HomeSection";
-import ProcessSection from "~/components/ProcessSection";
+import ProcessSection from "~/components/ProcessSection/ProcessSection";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
       <main className="w-screen max-w-full overflow-hidden bg-primary">
         <HomeSection />
         <ProcessSection />
-        <div className="h-screen w-screen"></div>
+        <AboutSection />
       </main>
     </>
   );
