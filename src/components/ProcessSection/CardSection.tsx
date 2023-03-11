@@ -29,6 +29,7 @@ const CardSection = () => {
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
 
+    /* eslint-disable */
     // Reset the cursor
     if (scrollData.fixed.parentElement) {
       const temp =
@@ -48,7 +49,7 @@ const CardSection = () => {
         scrollData.fixed.lastChild?.lastChild!.lastChild?.lastChild?.lastChild;
       temp!.style.cursor = "grabbing";
       scrollData.fixed.parentElement.style.userSelect = "none";
-
+      /* eslint-enable */
       // Add the listeners
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
