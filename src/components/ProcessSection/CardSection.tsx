@@ -6,10 +6,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import designCard from "../../../public/images/Design.png";
 
 const CardSection = () => {
-  type posType = {
-    x: number;
-    top: number;
-  };
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setMobile(false);
+    if (/Android|iPhone/i.test(navigator.userAgent)) {
+      setMobile(true);
+    }
+  }, []);
 
   const pos = {
     x: 0,
@@ -58,6 +62,35 @@ const CardSection = () => {
     }
   }, []);
 
+  const handleTouchMove = useCallback((e: TouchEvent) => {
+    if (e.touches[0]) {
+      const dx = e.touches[0].clientX - pos.x;
+
+      // Scroll the element
+      if (scrollData.fixed.parentElement) {
+        scrollData.fixed.parentElement.scrollTop = pos.top - dx * 3;
+      }
+    }
+  }, []);
+
+  const handleTouchEnd = useCallback((e: TouchEvent) => {
+    document.removeEventListener("touchmove", handleTouchMove);
+    document.removeEventListener("touchend", handleTouchEnd);
+  }, []);
+
+  const handleTouchStart = useCallback((e: TouchEvent) => {
+    if (e.touches[0]) {
+      if (scrollData.fixed.parentElement) {
+        pos.x = e.touches[0].clientX;
+        pos.top = scrollData.fixed.parentElement.scrollTop;
+
+        // Add the listeners
+        document.addEventListener("touchmove", handleTouchMove);
+        document.addEventListener("touchend", handleTouchEnd);
+      }
+    }
+  }, []);
+
   const scrollData = useScroll();
 
   const cardsRef = useRef<THREE.Group>(null!);
@@ -99,12 +132,22 @@ const CardSection = () => {
           ref={cardContainer}
           onMouseEnter={() => {
             if (scrollData.fixed.parentElement) {
-              document.addEventListener("mousedown", handleMouseDown);
+              if (mobile) {
+                document.addEventListener("touchstart", handleTouchStart);
+              } else {
+                document.addEventListener("mousedown", handleMouseDown);
+              }
             }
           }}
           onMouseLeave={() => {
             if (scrollData.fixed.parentElement) {
-              document.removeEventListener("mousedown", handleMouseDown);
+              if (scrollData.fixed.parentElement) {
+                if (mobile) {
+                  document.removeEventListener("touchstart", handleTouchStart);
+                } else {
+                  document.removeEventListener("mousedown", handleMouseDown);
+                }
+              }
             }
           }}
           className="flex cursor-grab flex-row items-center gap-x-9"
