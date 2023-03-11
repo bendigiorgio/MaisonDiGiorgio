@@ -51,7 +51,7 @@ const CardSection = () => {
       // @ts-ignore
       temp!.style.cursor = "grabbing";
       scrollData.fixed.parentElement.style.userSelect = "none";
-      /* eslint-enable */
+
       // Add the listeners
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
@@ -76,9 +76,13 @@ const CardSection = () => {
   const imageElement = useRef<HTMLImageElement>(null!);
 
   useEffect(() => {
-    console.log(imageElement);
-  }, [imageElement]);
-
+    if (imageElement.current) {
+      // @ts-ignore
+      imageElement.current.firstChild!.style.userSelect = "none";
+      console.log(imageElement.current.firstChild);
+    }
+  }, [imageElement.current]);
+  /* eslint-enable */
   useFrame(() => {
     if (cardsRef.current) {
       cardsRef.current.position.x =
@@ -101,7 +105,6 @@ const CardSection = () => {
               document.removeEventListener("mousedown", handleMouseDown);
             }
           }}
-          onMouseUp={() => {}}
           className="flex cursor-grab flex-row items-center gap-x-9"
         >
           <ArrowLeftCircleIcon className="w-h-20 h-20 text-neutral-300 mix-blend-difference " />
