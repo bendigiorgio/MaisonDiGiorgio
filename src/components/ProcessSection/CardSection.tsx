@@ -2,7 +2,7 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/24/solid";
 import { Html, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import Image from "next/image";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import designCard from "../../../public/images/Design.png";
 
 const CardSection = () => {
@@ -34,6 +34,7 @@ const CardSection = () => {
     if (scrollData.fixed.parentElement) {
       const temp =
         scrollData.fixed.lastChild?.lastChild!.lastChild?.lastChild?.lastChild;
+      // @ts-ignore
       temp!.style.cursor = "grab";
       scrollData.fixed.parentElement.style.userSelect = "auto";
     }
@@ -47,6 +48,7 @@ const CardSection = () => {
       // Set the cursor
       const temp =
         scrollData.fixed.lastChild?.lastChild!.lastChild?.lastChild?.lastChild;
+      // @ts-ignore
       temp!.style.cursor = "grabbing";
       scrollData.fixed.parentElement.style.userSelect = "none";
       /* eslint-enable */
@@ -71,6 +73,11 @@ const CardSection = () => {
   };
 
   const cardContainer = useRef<HTMLDivElement>(null!);
+  const imageElement = useRef<HTMLImageElement>(null!);
+
+  useEffect(() => {
+    console.log(imageElement);
+  }, [imageElement]);
 
   useFrame(() => {
     if (cardsRef.current) {
@@ -104,7 +111,10 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Design</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+            <div
+              ref={imageElement}
+              className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"
+            >
               <Image
                 className="object-cover object-center opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
