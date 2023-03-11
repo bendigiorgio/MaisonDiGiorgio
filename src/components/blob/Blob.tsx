@@ -72,7 +72,7 @@ function Blob() {
   });
 
   return (
-    <mesh ref={mesh} scale={1.9} position={[0, -1, 0]}>
+    <mesh ref={mesh} scale={1.9} position={[0, 0, 0]}>
       <icosahedronGeometry args={[2, 20]} />
       <shaderMaterial
         vertexShader={vShader}

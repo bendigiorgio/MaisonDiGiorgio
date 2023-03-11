@@ -8,26 +8,31 @@ const TitleSection = () => {
   const canvasSize = useThree((state) => state.size);
   const groupRef = useRef<THREE.Group>(null!);
 
+  const polyEquation = (x: number) => {
+    return (
+      -0.00000000000029707 * Math.pow(x, 4) +
+      0.00000000238692124 * Math.pow(x, 3) -
+      0.00000447098818061 * Math.pow(x, 2) -
+      0.00373916279620851 * x +
+      1.17687664001955
+    );
+  };
+
   useEffect(() => {
     if (groupRef.current) {
-      groupRef.current.position.x =
-        0.0000022133 * Math.pow(canvasSize.width, 2) -
-        0.0112623984 * canvasSize.width +
-        3.9623700955;
+      groupRef.current.position.x = polyEquation(canvasSize.width);
     }
+    console.log(canvasSize.width);
   }, [canvasSize.width]);
 
   window.addEventListener("resize", (e) => {
     if (groupRef.current) {
-      groupRef.current.position.x =
-        0.0000022133 * Math.pow(canvasSize.width, 2) -
-        0.0112623984 * canvasSize.width +
-        3.9623700955;
+      groupRef.current.position.x = polyEquation(canvasSize.width);
     }
   });
 
   return (
-    <group ref={groupRef} position={[0, 5.3, 0]}>
+    <group ref={groupRef} position={[0, 4.3, 0]}>
       <Html transform portal={{ current: scrollData.fixed }}>
         <div className="flex flex-col font-krylon">
           <h2 className="font-times">プロセス</h2>
@@ -44,24 +49,30 @@ const ScrollSection = () => {
   const canvasSize = useThree((state) => state.size);
   useFrame(() => {
     if (cardsRef.current) {
-      if (canvasSize.width <= 500) {
+      if (canvasSize.width <= 420) {
         cardsRef.current.position.x =
-          -0.0285 * canvasSize.width * scrollData.offset + 8;
+          -0.041 * canvasSize.width * scrollData.offset + 8;
+      } else if (canvasSize.width <= 455) {
+        cardsRef.current.position.x =
+          -0.038 * canvasSize.width * scrollData.offset + 8;
+      } else if (canvasSize.width <= 500) {
+        cardsRef.current.position.x =
+          -0.035 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 555) {
         cardsRef.current.position.x =
-          -0.026 * canvasSize.width * scrollData.offset + 8;
+          -0.033 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 620) {
         cardsRef.current.position.x =
-          -0.024 * canvasSize.width * scrollData.offset + 8;
+          -0.027 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 705) {
         cardsRef.current.position.x =
-          -0.0209 * canvasSize.width * scrollData.offset + 8;
+          -0.0239 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 815) {
         cardsRef.current.position.x =
-          -0.0177 * canvasSize.width * scrollData.offset + 8;
+          -0.0197 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 1000) {
         cardsRef.current.position.x =
-          -0.0145 * canvasSize.width * scrollData.offset + 8;
+          -0.0155 * canvasSize.width * scrollData.offset + 8;
       } else if (canvasSize.width <= 1300) {
         cardsRef.current.position.x =
           -0.011 * canvasSize.width * scrollData.offset + 8;
@@ -70,13 +81,13 @@ const ScrollSection = () => {
           -0.007 * canvasSize.width * scrollData.offset + 8;
       } else {
         cardsRef.current.position.x =
-          -0.004 * canvasSize.width * scrollData.offset + 8;
+          -0.00455 * canvasSize.width * scrollData.offset + 8;
       }
     }
   });
 
   return (
-    <group ref={cardsRef} position={[0, 1.3, 0]}>
+    <group ref={cardsRef} position={[0, 0, 0]}>
       <Html transform portal={{ current: scrollData.fixed }}>
         <div className="flex flex-row gap-x-9">
           <div>
@@ -110,8 +121,8 @@ function ProcessSection() {
             pages={3}
             style={{
               width: "100vw",
-              height: "70vh",
-              top: "20%",
+              height: "100vh",
+              top: "0",
               zIndex: 50,
             }}
           >
