@@ -6,11 +6,13 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function HomeSection() {
   type SectionsType = {
+    home: HTMLElement | null;
     process: HTMLElement | null;
     about: HTMLElement | null;
   };
 
   const sections: SectionsType = {
+    home: null,
     process: null,
     about: null,
   };
@@ -29,7 +31,7 @@ function HomeSection() {
     [];
 
   return (
-    <section>
+    <section id="home-section">
       <div className="pt-32">
         <div className="flex h-full w-full flex-col items-center gap-12 md:gap-20">
           {/* Title Section */}
@@ -127,7 +129,25 @@ function HomeSection() {
                     hovering && "opacity-40"
                   } relative hidden grow cursor-pointer overflow-hidden transition-all delay-75 ease-in-out hover:z-20 hover:scale-125 hover:rounded-3xl hover:opacity-100 lg:flex`}
                   onMouseEnter={() => setHoverNumber(3)}
+                  onClick={() => {
+                    setHovering(false);
+                    if (sections.about) {
+                      sections.about.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                 >
+                  {hovering && hoverNumber === 3 && (
+                    <motion.h3
+                      key={"first_image"}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="absolute top-1/2 z-30 mx-auto w-full text-center text-4xl text-white"
+                    >
+                      About
+                    </motion.h3>
+                  )}
                   <Image
                     priority
                     className="scale-[2] object-cover object-[45%_8vw]"

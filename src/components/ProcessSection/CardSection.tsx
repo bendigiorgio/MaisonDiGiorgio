@@ -3,8 +3,10 @@ import { Html, useScroll } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import designCard from "../../../public/images/Design.png";
-import discoveryCard from "../../../public/images/DiscoveryImage.png";
+import designCard from "../../../public/images/DesignImage.webp";
+import discoveryCard from "../../../public/images/DiscoveryImage.webp";
+import developmentCard from "../../../public/images/DevImage.webp";
+import MaintenanceCard from "../../../public/images/MaintenanceImage.webp";
 
 const CardSection = () => {
   const [mobile, setMobile] = useState(false);
@@ -180,11 +182,27 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Development</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+              <Image
+                draggable={false}
+                className="object-cover object-left opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
+                fill
+                src={developmentCard}
+                alt=""
+              />
+            </div>
           </div>
           <div>
             <h3 className="font-josefin">Maintenance</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+              <Image
+                draggable={false}
+                className="object-cover object-left opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
+                fill
+                src={MaintenanceCard}
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </Html>

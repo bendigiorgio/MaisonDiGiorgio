@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import AboutSection from "~/components/AboutSection";
 import HomeSection from "~/components/HomeSection";
+import NavBar from "~/components/NavBar";
 import ProcessSection from "~/components/ProcessSection/ProcessSection";
 
 const Home: NextPage = () => {
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
         <HomeSection />
         <ProcessSection />
         <AboutSection />
+        <NavBar />
       </main>
     </>
   );
