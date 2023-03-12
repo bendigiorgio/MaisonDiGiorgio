@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import Profile from "../../public/images/BenD.png";
-import WideProfile from "../../public/images/wideBenD.png";
+import Profile from "../../public/images/BenD.webp";
+import WideProfile from "../../public/images/wideBenD.webp";
 
 function AboutSection() {
   return (
