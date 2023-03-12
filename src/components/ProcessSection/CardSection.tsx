@@ -4,6 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import designCard from "../../../public/images/Design.png";
+import discoveryCard from "../../../public/images/DiscoveryImage.png";
 
 const CardSection = () => {
   const [mobile, setMobile] = useState(false);
@@ -155,7 +156,15 @@ const CardSection = () => {
           <ArrowLeftCircleIcon className="w-h-20 h-20 text-neutral-300 mix-blend-difference " />
           <div>
             <h3 className="font-josefin">Discovery</h3>
-            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding p-2 shadow-md backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+              <Image
+                draggable={false}
+                className="object-cover object-center opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
+                fill
+                src={discoveryCard}
+                alt=""
+              />
+            </div>
           </div>
           <div>
             <h3 className="font-josefin">Design</h3>
@@ -171,11 +180,11 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Development</h3>
-            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
           <div>
             <h3 className="font-josefin">Maintenance</h3>
-            <div className="h-48 w-48 rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
+            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter"></div>
           </div>
         </div>
       </Html>

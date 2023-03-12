@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import Profile from "../../public/images/BenD.png";
+import WideProfile from "../../public/images/wideBenD.png";
 
 function AboutSection() {
   return (
-    <section className="flex h-screen w-screen pt-4">
+    <section className="flex h-screen w-screen pt-4" id="about-section">
       <div className="flex grow flex-row">
-        <div className="flex w-auto pl-20">
+        <div className="flex w-full justify-center md:w-auto md:justify-start md:pl-20 ">
           <div className="flex flex-col font-josefin">
             <h2 className="font-times text-3xl md:text-4xl">自己紹介</h2>
             <h1 className="text-6xl md:text-7xl">Who we are</h1>
@@ -42,6 +43,14 @@ function AboutSection() {
                   </p>
                 </blockquote>
               </div>
+            </div>
+            <div className="relative my-3 flex grow justify-start md:hidden">
+              <Image
+                className="object-contain object-center"
+                fill
+                src={WideProfile}
+                alt="Benjamin Di Giorgio"
+              />
             </div>
           </div>
         </div>

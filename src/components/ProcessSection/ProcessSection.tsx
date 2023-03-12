@@ -6,7 +6,7 @@ import CardSection from "./CardSection";
 
 function ProcessSection() {
   return (
-    <section className="h-screen w-screen">
+    <section className="h-screen w-screen" id="process-section">
       <div className="h-full w-full">
         <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
           <ScrollControls
