@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import seasonImage from "../../public/images/treeScene.png";
+import seasonImage from "../../public/images/treeScene.webp";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
