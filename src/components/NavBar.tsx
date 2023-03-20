@@ -43,7 +43,7 @@ function NavBar() {
             }
           >
             <ul className="flex flex-row justify-evenly font-josefin text-s-purple-grey bg-blend-difference">
-              <li>
+              <li className="hover:text-s-purple-grey/60">
                 <button
                   onClick={() => {
                     if (sections.home) {
@@ -54,7 +54,7 @@ function NavBar() {
                   Home
                 </button>
               </li>
-              <li>
+              <li className="hover:text-s-purple-grey/60">
                 <button
                   onClick={() => {
                     if (sections.process) {
@@ -65,10 +65,10 @@ function NavBar() {
                   Process
                 </button>
               </li>
-              <li>
+              <li className="hover:text-s-purple-grey/60">
                 <button>Uniqueness</button>
               </li>
-              <li>
+              <li className="hover:text-s-purple-grey/60">
                 <button
                   onClick={() => {
                     if (sections.about) {
@@ -79,7 +79,7 @@ function NavBar() {
                   About
                 </button>
               </li>
-              <li>
+              <li className="hover:text-s-purple-grey/60">
                 <button>Contact Us</button>
               </li>
             </ul>
