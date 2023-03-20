@@ -89,6 +89,7 @@ function HomeSection() {
                     priority
                     className="scale-[1.5] object-cover object-left-bottom"
                     fill
+                    sizes="70vw"
                     src={seasonImage}
                     alt="Season Image"
                   />
@@ -104,6 +105,7 @@ function HomeSection() {
                     priority
                     className="scale-[2.8] object-cover object-[0%_-10vw]"
                     fill
+                    sizes="70vw"
                     src={seasonImage}
                     alt="Season Image"
                   />
@@ -119,6 +121,7 @@ function HomeSection() {
                     priority
                     className="scale-[1.6] object-cover object-[60%,-5vw]"
                     fill
+                    sizes="70vw"
                     src={seasonImage}
                     alt="Season Image"
                   />
@@ -152,6 +155,7 @@ function HomeSection() {
                     priority
                     className="scale-[2] object-cover object-[45%_8vw]"
                     fill
+                    sizes="70vw"
                     src={seasonImage}
                     alt="Season Image"
                   />
@@ -185,6 +189,7 @@ function HomeSection() {
                     priority
                     className="scale-[2.5] object-cover object-[25%,-7vw]"
                     fill
+                    sizes="70vw"
                     src={seasonImage}
                     alt="Season Image"
                   />

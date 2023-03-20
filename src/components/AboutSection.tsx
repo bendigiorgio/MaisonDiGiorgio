@@ -48,6 +48,7 @@ function AboutSection() {
               <Image
                 className="object-contain object-center"
                 fill
+                sizes="50vw"
                 src={WideProfile}
                 alt="Benjamin Di Giorgio"
               />
@@ -94,6 +95,7 @@ function AboutSection() {
             <Image
               className="object-contain object-left"
               fill
+              sizes="20vw"
               src={Profile}
               alt="Benjamin Di Giorgio"
             />

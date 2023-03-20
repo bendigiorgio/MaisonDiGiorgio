@@ -158,11 +158,12 @@ const CardSection = () => {
           <ArrowLeftCircleIcon className="w-h-20 h-20 text-neutral-300 mix-blend-difference " />
           <div>
             <h3 className="font-josefin">Discovery</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+            <div className="relative h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
               <Image
                 draggable={false}
                 className="object-cover object-center opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
+                sizes="20vw"
                 src={discoveryCard}
                 alt=""
               />
@@ -170,11 +171,12 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Design</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+            <div className="relative h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
               <Image
                 draggable={false}
                 className="object-cover object-center opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
+                sizes="20vw"
                 src={designCard}
                 alt=""
               />
@@ -182,11 +184,12 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Development</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+            <div className="relative h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
               <Image
                 draggable={false}
                 className="object-cover object-left opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
+                sizes="20vw"
                 src={developmentCard}
                 alt=""
               />
@@ -194,11 +197,12 @@ const CardSection = () => {
           </div>
           <div>
             <h3 className="font-josefin">Maintenance</h3>
-            <div className="h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
+            <div className="relative h-48 w-48 overflow-hidden rounded-md border-s-purple bg-neutral-100 bg-opacity-70 bg-clip-padding shadow-md backdrop-blur-md backdrop-filter">
               <Image
                 draggable={false}
                 className="object-cover object-left opacity-90 transition-opacity duration-500 ease-in-out hover:opacity-20"
                 fill
+                sizes="20vw"
                 src={MaintenanceCard}
                 alt=""
               />
