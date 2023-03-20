@@ -17,15 +17,26 @@ const TitleSection = () => {
     );
   };
 
+  const polyEquationHeight = (x: number) => {
+    return (
+      0.0000000038 * Math.pow(x, 3) -
+      0.0000188117 * Math.pow(x, 2) +
+      0.0356092824 * x -
+      19.9157558831
+    );
+  };
+
   useEffect(() => {
     if (groupRef.current) {
-      groupRef.current.position.x = polyEquation(canvasSize.width);
+      groupRef.current.position.x =
+        polyEquation(canvasSize.width) + polyEquationHeight(window.innerHeight);
     }
   }, [canvasSize.width]);
 
   window.addEventListener("resize", (e) => {
     if (groupRef.current) {
-      groupRef.current.position.x = polyEquation(canvasSize.width);
+      groupRef.current.position.x =
+        polyEquation(canvasSize.width) + polyEquationHeight(window.innerHeight);
     }
   });
 
