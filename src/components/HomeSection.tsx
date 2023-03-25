@@ -52,7 +52,7 @@ function HomeSection() {
           </div>
 
           {/* Season Image */}
-          <div className="h-[80vh] w-screen px-8 md:px-12 lg:px-32 xl:px-48">
+          <div className="h-[80vh] w-full max-w-[140rem] px-8 md:px-12 lg:px-32 xl:px-48">
             <AnimatePresence>
               <div
                 className="flex h-[82.5%] w-full"

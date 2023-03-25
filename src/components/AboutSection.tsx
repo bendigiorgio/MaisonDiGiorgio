@@ -5,8 +5,8 @@ import WideProfile from "../../public/images/wideBenD.webp";
 
 function AboutSection() {
   return (
-    <section className="flex h-screen flex-col items-center">
-      <div className="container mt-10 flex flex-row justify-center">
+    <section className="flex h-[50vw] flex-col items-center">
+      <div className="container mt-10 flex w-full max-w-[120rem] flex-row justify-center">
         <div className="flex flex-col font-josefin">
           <h2 className="font-times text-3xl">自己紹介</h2>
           <h1 className="text-6xl">Who we are</h1>
@@ -53,7 +53,7 @@ function AboutSection() {
           </div>
         </div>
         <div>
-          <div className="relative hidden h-[50vh] w-[20rem] md:flex lg:w-[25rem]">
+          <div className="relative hidden h-[50vh] grow md:flex lg:w-[25rem]">
             <Image
               className="object-contain object-center"
               fill
